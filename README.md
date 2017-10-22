@@ -11,11 +11,11 @@ The Algorithm
 
 The algorithm really only computes the computer's moves for the following three squares:
 
- * | * |  
----+---+---
-   | * |  
----+---+---
-   |   | 
+  * | * |  
+ ---+---+---
+    | * |  
+ ---+---+---
+    |   | 
    
 If the computer determines that it needs to move into one of these squares, then it takes the move and allows the player to make his/her move. If these squares are already occupied, or there isn't an important move in any of these squares, the computer rotates the board 90 degrees counter-clockwise and tries these same three positions (on the new board) again. After rotating the board four times, the computer winds up with the original configuration. If this occurs, and the board isn't completely filled, the computer takes the first available position on the game board (first trying the center, then moving from left to right, top to bottom).
 
@@ -27,120 +27,120 @@ Note: an "X", "O", or space appear in a square below means that character must b
 
 Pattern #1 to check:
 
- ? | O | O 
----+---+---
- * | * | * 
----+---+---
- * | * | * 
+  ? | O | O 
+ ---+---+---
+  * | * | * 
+ ---+---+---
+  * | * | * 
 
 Pattern #2 to check:
 
- ? | * | * 
----+---+---
- O | * | * 
----+---+---
- O | * | * 
+  ? | * | * 
+ ---+---+---
+  O | * | * 
+ ---+---+---
+  O | * | * 
 
 Pattern #3 to check:
 
- ? | * | * 
----+---+---
- * | O | * 
----+---+---
- * | * | O 
+  ? | * | * 
+ ---+---+---
+  * | O | * 
+ ---+---+---
+  * | * | O 
 
 Pattern #4 to check:
 
- O | ? | O 
----+---+---
- * | * | * 
----+---+---
- * | * | * 
+  O | ? | O 
+ ---+---+---
+  * | * | * 
+ ---+---+---
+  * | * | * 
 
 Pattern #5 to check:
 
- * | ? | * 
----+---+---
- * | O | * 
----+---+---
- * | O | * 
+  * | ? | * 
+ ---+---+---
+  * | O | * 
+ ---+---+---
+  * | O | * 
 
 Pattern #6 to check:
 
- * | O | * 
----+---+---
- * | ? | * 
----+---+---
- * | O | * 
+  * | O | * 
+ ---+---+---
+  * | ? | * 
+ ---+---+---
+  * | O | * 
 
 
 Pattern #7 to check:
 
- O | * | * 
----+---+---
- * | ? | * 
----+---+---
- * | * | O 
+  O | * | * 
+ ---+---+---
+  * | ? | * 
+ ---+---+---
+  * | * | O 
+  
 The following patterns check to see if the computer needs to block the player from winning on the next move.
-
 
 Pattern #8 to check:
 
- ? | X | X 
----+---+---
- * | * | * 
----+---+---
- * | * | * 
+  ? | X | X 
+ ---+---+---
+  * | * | * 
+ ---+---+---
+  * | * | * 
 
 Pattern #9 to check:
 
- ? | * | * 
----+---+---
- X | * | * 
----+---+---
- X | * | * 
+  ? | * | * 
+ ---+---+---
+  X | * | * 
+ ---+---+---
+  X | * | * 
 
 Pattern #10 to check:
 
- ? | * | * 
----+---+---
- * | X | * 
----+---+---
- * | * | X 
+  ? | * | * 
+ ---+---+---
+  * | X | * 
+ ---+---+---
+  * | * | X 
 
 Pattern #11 to check:
 
- X | ? | X 
----+---+---
- * | * | * 
----+---+---
- * | * | * 
+  X | ? | X 
+ ---+---+---
+  * | * | * 
+ ---+---+---
+  * | * | * 
 
 Pattern #12 to check:
 
- * | ? | * 
----+---+---
- * | X | * 
----+---+---
- * | X | * 
+  * | ? | * 
+ ---+---+---
+  * | X | * 
+ ---+---+---
+  * | X | * 
 
 
 Pattern #13 to check:
 
- * | X | * 
----+---+---
- * | ? | * 
----+---+---
- * | X | * 
+  * | X | * 
+ ---+---+---
+  * | ? | * 
+ ---+---+---
+  * | X | * 
 
 
 Pattern #14 to check:
 
- X | * | * 
----+---+---
- * | ? | * 
----+---+---
- * | * | X 
+  X | * | * 
+ ---+---+---
+  * | ? | * 
+ ---+---+---
+  * | * | X 
 
 
 
@@ -156,52 +156,53 @@ Pattern #15 to check:
 
 Pattern #16 to check:
 
- ? | X |   
----+---+---
- X | O | * 
----+---+---
-   | * | * 
+  ? | X |   
+ ---+---+---
+  X | O | * 
+ ---+---+---
+    | * | * 
 
 Pattern #17 to check:
 
- ? |   | X 
----+---+---
- X | O | * 
----+---+---
-   | * | * 
+  ? |   | X 
+ ---+---+---
+  X | O | * 
+ ---+---+---
+    | * | * 
 
 
 Pattern #18 to check:
 
- * | * | X 
----+---+---
- * | O | 
----+---+---
-   | X | ? 
+  * | * | X 
+ ---+---+---
+  * | O | 
+ ---+---+---
+    | X | ? 
 
 Pattern #19 to check:
 
- ? |   | X 
----+---+---
-   | O | * 
----+---+---
- X | * | * 
+  ? |   | X 
+ ---+---+---
+    | O | * 
+ ---+---+---
+  X | * | * 
 
 Pattern #20 to check:
- ? | * | * 
----+---+---
- * | X | * 
----+---+---
- * | * |   
+ 
+  ? | * | * 
+ ---+---+---
+  * | X | * 
+ ---+---+---
+  * | * |   
 
 
 Pattern #21 to check:
 
- * | ? | * 
----+---+---
- * | X | * 
----+---+---
- * |   | * 
+  * | ? | * 
+ ---+---+---
+  * | X | * 
+ ---+---+---
+  * |   | * 
  
 If the computer cannot match one of the above patterns, it rotates the board 90 degrees and tries again. After rotating the board four times without finding a match, the computer locates the first empty square and moves there (check the middle first, and then the rest). If there are not empty squares, the game is over.
 
